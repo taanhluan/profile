@@ -109,8 +109,28 @@
             margin: 1.5rem 0;
         }
 
-        .row {
-            gap: 2rem;
+        .carousel-inner {
+            display: flex;
+        }
+
+        .carousel-item {
+            flex: 0 0 33.333%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            padding: 10px;
         }
 
         .btn {
@@ -173,13 +193,12 @@
                 gap: 1rem;
             }
 
-            .post {
-                flex: 1 1 100%;
-                max-width: 100%;
+            .carousel-item {
+                flex: 0 0 100%;
             }
 
-            .row {
-                flex-direction: column;
+            .carousel-inner {
+                flex-wrap: nowrap;
             }
         }
     </style>
@@ -199,102 +218,46 @@
 
     <div class="container">
         <div class="course-area">
-            <div class="course-header">Basic Courses</div>
-            <div class="row">
-                <div class="col-md-4 post animate__animated animate__fadeInUp">
-                    <h2>Intro to Product Ownership</h2>
-                    <p>Learn the basics of being a Product Owner...</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
-
-                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-1s">
-                    <h2>Business Analysis Fundamentals</h2>
-                    <p>Understand the key concepts of Business Analysis...</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
-
-                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-2s">
-                    <h2>Tools for Product Owners</h2>
-                    <p>Explore essential tools for Product Owners...</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
-
-                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-3s">
-                    <h2>Agile Fundamentals</h2>
-                    <p>Explore the principles and practices of Agile methodologies for effective team collaboration.</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
-
-                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-4s">
-                    <h2>Scrum Basics</h2>
-                    <p>Understand the roles, events, and artifacts in the Scrum framework.</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
-
-                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-5s">
-                    <h2>Stakeholder Engagement</h2>
-                    <p>Learn how to effectively communicate and collaborate with stakeholders.</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="course-area">
             <div class="course-header">Competitive Courses</div>
             <div id="carouselCompetitiveCourses" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 post">
-                                <h2>Advanced Product Ownership</h2>
-                                <p>Master advanced skills for Product Owners...</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
+                        <div class="col-md-6 post">
+                            <img src="https://via.placeholder.com/400x200" alt="Advanced Product Ownership">
+                            <h2>Advanced Product Ownership</h2>
+                            <p>Master advanced skills for Product Owners:</p>
+                            <ul>
+                                <li>Roadmap Planning</li>
+                                <li>Stakeholder Management</li>
+                                <li>Agile Leadership</li>
+                            </ul>
+                            <a href="#" class="btn">Read More</a>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 post">
-                                <h2>Expert Business Analysis</h2>
-                                <p>Develop expertise in Business Analysis...</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
+                        <div class="col-md-6 post">
+                            <img src="https://via.placeholder.com/400x200" alt="Expert Business Analysis">
+                            <h2>Expert Business Analysis</h2>
+                            <p>Develop expertise in Business Analysis:</p>
+                            <ul>
+                                <li>Requirements Engineering</li>
+                                <li>Gap Analysis</li>
+                                <li>UML Diagram Creation</li>
+                            </ul>
+                            <a href="#" class="btn">Read More</a>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 post">
-                                <h2>System Analysis Techniques</h2>
-                                <p>Learn advanced system analysis techniques...</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 post">
-                                <h2>Risk Management for Projects</h2>
-                                <p>Develop strategies to identify, assess, and mitigate risks in projects.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 post">
-                                <h2>Data-Driven Decision Making</h2>
-                                <p>Learn how to leverage data to make strategic business decisions.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 post">
-                                <h2>Leadership in Product Management</h2>
-                                <p>Master leadership skills to inspire and manage high-performing teams.</p>
-                                <a href="#" class="btn">Read More</a>
-                            </div>
+                        <div class="col-md-6 post">
+                            <img src="https://via.placeholder.com/400x200" alt="System Analysis Techniques">
+                            <h2>System Analysis Techniques</h2>
+                            <p>Learn advanced system analysis techniques:</p>
+                            <ul>
+                                <li>Data Flow Diagrams</li>
+                                <li>Entity-Relationship Modeling</li>
+                                <li>System Design Principles</li>
+                            </ul>
+                            <a href="#" class="btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -316,10 +279,5 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', () => alert('Tính năng này đang được phát triển!'));
-        });
-    </script>
 </body>
 </html>
