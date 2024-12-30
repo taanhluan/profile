@@ -216,24 +216,44 @@
 
         <div class="course-area">
             <div class="course-header">Competitive Courses</div>
-            <div class="row">
-                <div class="col-md-4 post animate__animated animate__fadeInUp">
-                    <h2>Advanced Product Ownership</h2>
-                    <p>Master advanced skills for Product Owners...</p>
-                    <a href="#" class="btn">Read More</a>
+            <div id="carouselCompetitiveCourses" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>Advanced Product Ownership</h2>
+                                <p>Master advanced skills for Product Owners...</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>Expert Business Analysis</h2>
+                                <p>Develop expertise in Business Analysis...</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>System Analysis Techniques</h2>
+                                <p>Learn advanced system analysis techniques...</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-1s">
-                    <h2>Expert Business Analysis</h2>
-                    <p>Develop expertise in Business Analysis...</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
-
-                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-2s">
-                    <h2>System Analysis Techniques</h2>
-                    <p>Learn advanced system analysis techniques...</p>
-                    <a href="#" class="btn">Read More</a>
-                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCompetitiveCourses" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCompetitiveCourses" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
     </div>
@@ -243,6 +263,7 @@
         <p>Connect with us on <a href="#">Social Media</a></p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         document.querySelectorAll('.btn').forEach(button => {
             button.addEventListener('click', () => alert('Tính năng này đang được phát triển!'));
