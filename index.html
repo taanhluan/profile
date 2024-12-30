@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
         :root {
             --primary-color: #6C63FF;
@@ -19,12 +20,6 @@
             --text-color: #333;
             --card-background: #FFFFFF;
             --shadow-color: rgba(0, 0, 0, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -59,14 +54,6 @@
             opacity: 0.9;
         }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            background: var(--secondary-color);
-            padding: 1rem 0;
-        }
-
         nav a {
             color: #fff;
             text-decoration: none;
@@ -82,10 +69,6 @@
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2rem;
         }
 
         .post {
@@ -93,9 +76,8 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 4px 6px var(--shadow-color);
-            flex: 1 1 calc(33.333% - 2rem);
-            max-width: calc(33.333% - 2rem);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
         }
 
         .post:hover {
@@ -114,18 +96,15 @@
             margin: 1rem 0;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
+        .btn-custom {
             background: var(--primary-color);
             color: #fff;
-            text-decoration: none;
             border-radius: 30px;
             font-weight: 500;
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
-        .btn:hover {
+        .btn-custom:hover {
             background: var(--accent-color);
             transform: scale(1.05);
         }
@@ -137,10 +116,6 @@
             color: #fff;
             margin-top: 2rem;
             box-shadow: 0 -4px 6px var(--shadow-color);
-        }
-
-        footer p {
-            margin: 0.5rem 0;
         }
 
         footer a {
@@ -164,7 +139,6 @@
             }
 
             .post {
-                flex: 1 1 100%;
                 max-width: 100%;
             }
         }
@@ -176,30 +150,50 @@
         <p>Knowledge & Tools for Aspiring Product Owners and Business Analysts</p>
     </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PO & BA Insights</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <div class="container">
-        <div class="post animate__animated animate__fadeInUp">
-            <h2>Career Path: Product Owner</h2>
-            <p>Explore the essential skills and tools to become a successful Product Owner...</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
+        <div class="row">
+            <div class="col-md-4 post animate__animated animate__fadeInUp">
+                <h2>Career Path: Product Owner</h2>
+                <p>Explore the essential skills and tools to become a successful Product Owner...</p>
+                <a href="#" class="btn btn-custom">Read More</a>
+            </div>
 
-        <div class="post animate__animated animate__fadeInUp animate__delay-1s">
-            <h2>Mastering Business Analysis</h2>
-            <p>Learn how to write effective BRDs and gather requirements like a pro...</p>
-            <a href="#" class="btn">Read More</a>
-        </div>
+            <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-1s">
+                <h2>Mastering Business Analysis</h2>
+                <p>Learn how to write effective BRDs and gather requirements like a pro...</p>
+                <a href="#" class="btn btn-custom">Read More</a>
+            </div>
 
-        <div class="post animate__animated animate__fadeInUp animate__delay-2s">
-            <h2>Visualizing with UML Diagrams</h2>
-            <p>Understand how to create and use UML diagrams to map system requirements...</p>
-            <a href="#" class="btn">Read More</a>
+            <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-2s">
+                <h2>Visualizing with UML Diagrams</h2>
+                <p>Understand how to create and use UML diagrams to map system requirements...</p>
+                <a href="#" class="btn btn-custom">Read More</a>
+            </div>
         </div>
     </div>
 
@@ -208,6 +202,7 @@
         <p>Connect with us on <a href="#">Social Media</a></p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
         document.querySelectorAll('.btn').forEach(button => {
             button.addEventListener('click', () => alert('Tính năng này đang được phát triển!'));
