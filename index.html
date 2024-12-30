@@ -82,8 +82,9 @@
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1.5rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             gap: 2rem;
         }
 
@@ -92,6 +93,8 @@
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 4px 6px var(--shadow-color);
+            flex: 1 1 calc(33.333% - 2rem);
+            max-width: calc(33.333% - 2rem);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -158,6 +161,11 @@
             nav {
                 flex-direction: column;
                 gap: 1rem;
+            }
+
+            .post {
+                flex: 1 1 100%;
+                max-width: 100%;
             }
         }
     </style>
