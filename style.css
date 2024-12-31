@@ -6,6 +6,8 @@
     --text-color: #333;
     --card-background: #FFFFFF;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow-color: rgba(0, 0, 0, 0.2);
+    --transition-duration: 0.3s;
 }
 
 * {
@@ -19,8 +21,10 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.8;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
+/* Header */
 header {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: #fff;
@@ -30,6 +34,11 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px var(--shadow-color);
+    transition: box-shadow var(--transition-duration);
+}
+
+header:hover {
+    box-shadow: 0 6px 12px var(--hover-shadow-color);
 }
 
 header h1 {
@@ -45,56 +54,76 @@ header p {
     opacity: 0.9;
 }
 
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: center;
     gap: 2rem;
     background: var(--secondary-color);
     padding: 1rem 0;
+    transition: background-color var(--transition-duration);
+}
+
+nav:hover {
+    background: rgba(35, 35, 35, 0.95);
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color var(--transition-duration), transform var(--transition-duration);
 }
 
 nav a:hover {
     color: var(--accent-color);
+    transform: scale(1.1);
 }
 
+/* Container */
 .container {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1.5rem;
+    transition: all var(--transition-duration);
 }
 
+/* Course Post */
 .post {
     background: var(--card-background);
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 6px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
     margin-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
 }
 
 .post:hover {
     transform: translateY(-10px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px var(--hover-shadow-color);
 }
 
-.post h2 {
+.post h2, .post h4 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
+    transition: color var(--transition-duration);
 }
 
 .post p {
     font-size: 1rem;
     margin: 1.5rem 0;
+    color: var(--text-color);
+    transition: color var(--transition-duration);
 }
 
+.post:hover h2, .post:hover h4 {
+    color: var(--accent-color);
+}
+
+/* Button */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.5rem;
@@ -103,14 +132,15 @@ nav a:hover {
     text-decoration: none;
     border-radius: 30px;
     font-weight: 500;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: background var(--transition-duration), transform var(--transition-duration);
 }
 
 .btn:hover {
     background: var(--accent-color);
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -118,6 +148,11 @@ footer {
     color: #fff;
     margin-top: 2rem;
     box-shadow: 0 -4px 6px var(--shadow-color);
+    transition: box-shadow var(--transition-duration);
+}
+
+footer:hover {
+    box-shadow: 0 -6px 12px var(--hover-shadow-color);
 }
 
 footer p {
@@ -128,12 +163,14 @@ footer a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
+    transition: color var(--transition-duration);
 }
 
 footer a:hover {
     color: var(--accent-color);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.5rem;
@@ -154,3 +191,7 @@ footer a:hover {
     }
 }
 
+/* Add smooth transitions */
+html {
+    scroll-behavior: smooth;
+}
