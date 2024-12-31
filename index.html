@@ -9,8 +9,8 @@
     <title>PO & BA Insights</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
         :root {
             --primary-color: #6C63FF;
@@ -22,19 +22,23 @@
             --shadow-color: rgba(0, 0, 0, 0.1);
         }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.8;
-            margin: 0;
-            padding: 0;
         }
 
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
             color: #fff;
-            padding: 2rem;
+            padding: 2rem 1rem;
             text-align: center;
             position: sticky;
             top: 0;
@@ -80,69 +84,36 @@
             padding: 0 1.5rem;
         }
 
-        .course-header {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        /* Carousel Styling */
-        #carouselCompetitiveCourses {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            min-height: 600px;
-        }
-
-        .carousel-item {
-            display: none;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 500px;
-        }
-
-        .carousel-item.active {
-            display: flex;
-        }
-
-        .carousel-item img {
-            max-width: 80%;
-            max-height: 300px;
-            object-fit: contain;
-            border-radius: 10px;
-            margin: 0 auto;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .post {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 15px;
             box-shadow: 0 4px 6px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2rem;
         }
 
-        .carousel-item h2 {
-            margin-top: 1rem;
-            font-size: 1.8rem;
+        .post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .post h2 {
             color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
         }
 
-        .carousel-item p {
+        .post p {
             font-size: 1rem;
-            margin: 0.5rem 0;
+            margin: 1.5rem 0;
         }
 
-        .carousel-item ul {
-            padding: 0;
-            margin: 1rem 0;
-            list-style: none;
-            text-align: center;
+        .row {
+            gap: 2rem;
         }
 
-        .carousel-item ul li {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .carousel-item a {
-            margin-top: 1rem;
+        .btn {
             display: inline-block;
             padding: 0.8rem 1.5rem;
             background: var(--primary-color);
@@ -153,7 +124,7 @@
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
-        .carousel-item a:hover {
+        .btn:hover {
             background: var(--accent-color);
             transform: scale(1.05);
         }
@@ -164,6 +135,11 @@
             background: var(--secondary-color);
             color: #fff;
             margin-top: 2rem;
+            box-shadow: 0 -4px 6px var(--shadow-color);
+        }
+
+        footer p {
+            margin: 0.5rem 0;
         }
 
         footer a {
@@ -174,6 +150,37 @@
 
         footer a:hover {
             color: var(--accent-color);
+        }
+
+        .course-area {
+            margin-bottom: 3rem;
+        }
+
+        .course-header {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .post {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .row {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -191,19 +198,115 @@
     </nav>
 
     <div class="container">
-        <div class="course-header">Competitive Courses</div>
-        <div id="carouselCompetitiveCourses" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" id="carousel-inner">
-                <!-- Các mục carousel sẽ được thêm động ở đây -->
+        <div class="course-area">
+            <div class="course-header">Basic Courses</div>
+            <div class="row">
+                <div class="col-md-4 post animate__animated animate__fadeInUp">
+                    <h2>Intro to Product Ownership</h2>
+                    <p>Learn the basics of being a Product Owner...</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-1s">
+                    <h2>Business Analysis Fundamentals</h2>
+                    <p>Understand the key concepts of Business Analysis...</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-2s">
+                    <h2>Tools for Product Owners</h2>
+                    <p>Explore essential tools for Product Owners...</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-3s">
+                    <h2>Agile Fundamentals</h2>
+                    <p>Explore the principles and practices of Agile methodologies for effective team collaboration.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-4s">
+                    <h2>Scrum Basics</h2>
+                    <p>Understand the roles, events, and artifacts in the Scrum framework.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+
+                <div class="col-md-4 post animate__animated animate__fadeInUp animate__delay-5s">
+                    <h2>Stakeholder Engagement</h2>
+                    <p>Learn how to effectively communicate and collaborate with stakeholders.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselCompetitiveCourses" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselCompetitiveCourses" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        </div>
+
+        <div class="course-area">
+            <div class="course-header">Competitive Courses</div>
+            <div id="carouselCompetitiveCourses" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>Advanced Product Ownership</h2>
+                                <p>Master advanced skills for Product Owners...</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>Expert Business Analysis</h2>
+                                <p>Develop expertise in Business Analysis...</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>System Analysis Techniques</h2>
+                                <p>Learn advanced system analysis techniques...</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>Risk Management for Projects</h2>
+                                <p>Develop strategies to identify, assess, and mitigate risks in projects.</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>Data-Driven Decision Making</h2>
+                                <p>Learn how to leverage data to make strategic business decisions.</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 post">
+                                <h2>Leadership in Product Management</h2>
+                                <p>Master leadership skills to inspire and manage high-performing teams.</p>
+                                <a href="#" class="btn">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselCompetitiveCourses" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselCompetitiveCourses" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -214,43 +317,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const carouselInner = document.getElementById('carousel-inner');
-            const items = [
-                {
-                    img: 'https://github.com/taanhluan/JonathanTa/blob/main/assets/images/fundamentals-of-agile-project-management.png?raw=true',
-                    title: 'Advanced Product Ownership',
-                    description: 'Master advanced skills for Product Owners:',
-                    details: ['Roadmap Planning', 'Stakeholder Management', 'Agile Leadership']
-                },
-                {
-                    img: 'https://github.com/taanhluan/JonathanTa/blob/main/assets/images/fundamentals-of-agile-project-management.png?raw=true',
-                    title: 'Expert Business Analysis',
-                    description: 'Develop expertise in Business Analysis:',
-                    details: ['Requirements Engineering', 'Gap Analysis', 'UML Diagram Creation']
-                },
-                {
-                    img: 'https://github.com/taanhluan/JonathanTa/blob/main/assets/images/fundamentals-of-agile-project-management.png?raw=true',
-                    title: 'System Analysis Techniques',
-                    description: 'Learn advanced system analysis techniques:',
-                    details: ['Data Flow Diagrams', 'Entity-Relationship Modeling', 'System Design Principles']
-                }
-            ];
-
-            items.forEach((item, index) => {
-                const carouselItem = document.createElement('div');
-                carouselItem.className = 'carousel-item' + (index === 0 ? ' active' : '');
-                carouselItem.innerHTML = `
-                    <img src="${item.img}" alt="${item.title}">
-                    <h2>${item.title}</h2>
-                    <p>${item.description}</p>
-                    <ul>
-                        ${item.details.map(detail => `<li>${detail}</li>`).join('')}
-                    </ul>
-                    <a href="#" class="btn">Read More</a>
-                `;
-                carouselInner.appendChild(carouselItem);
-            });
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', () => alert('Tính năng này đang được phát triển!'));
         });
     </script>
 </body>
