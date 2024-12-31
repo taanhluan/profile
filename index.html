@@ -12,164 +12,198 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <style>
-        :root {
-            --primary-color: #6C63FF;
-            --secondary-color: #232323;
-            --accent-color: #FF6584;
-            --background-color: #F5F6FA;
-            --text-color: #333;
-            --card-background: #FFFFFF;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-        }
+       :root {
+    --primary-color: #6C63FF;
+    --secondary-color: #232323;
+    --accent-color: #FF6584;
+    --background-color: #F5F6FA;
+    --text-color: #333;
+    --card-background: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.8;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
 
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: #fff;
-            padding: 2rem;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px var(--shadow-color);
-        }
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
 
-        header h1 {
-            font-size: clamp(2.5rem, 5vw, 3rem);
-            font-weight: 700;
-            color: #fff;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
+header h1 {
+    font-size: clamp(2.5rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-            opacity: 0.9;
-        }
+header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            background: var(--secondary-color);
-            padding: 1rem 0;
-        }
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background: var(--secondary-color);
+    padding: 1rem 0;
+}
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
 
-        nav a:hover {
-            color: var(--accent-color);
-        }
+nav a:hover {
+    color: var(--accent-color);
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-        }
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
 
-        .carousel-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: transform 0.5s ease, opacity 0.5s ease;
-        }
+.course-header {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
 
-        .carousel-item img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px var(--shadow-color);
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-        }
+/* Carousel Styling */
+#carouselCompetitiveCourses {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-        .carousel-item.active img {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
+.carousel-inner {
+    position: relative;
+}
 
-        .carousel-item h2 {
-            margin-top: 1rem;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-        }
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 400px; /* Đảm bảo chiều cao đủ cho nội dung */
+}
 
-        .carousel-item p {
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            margin-bottom: 1rem;
-        }
+.carousel-item img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain; /* Giữ nguyên tỷ lệ ảnh */
+    border-radius: 10px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
 
-        .carousel-item a {
-            margin-top: 1rem;
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: var(--primary-color);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 500;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
+.carousel-item.active img {
+    transform: scale(1); /* Loại bỏ phóng to quá mức */
+}
 
-        .carousel-item a:hover {
-            background: var(--accent-color);
-            transform: scale(1.05);
-        }
+.carousel-item h2 {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            padding: 10px;
-        }
+.carousel-item p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
 
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: var(--secondary-color);
-            color: #fff;
-            margin-top: 2rem;
-            box-shadow: 0 -4px 6px var(--shadow-color);
-        }
+.carousel-item ul {
+    padding: 0;
+    margin: 1rem 0;
+    list-style: none;
+    text-align: left;
+    max-width: 300px;
+    margin: 0 auto;
+}
 
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
+.carousel-item ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
 
-        footer a:hover {
-            color: var(--accent-color);
-        }
+.carousel-item a {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
 
-        .course-header {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
+.carousel-item a:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}
 
-        @media (max-width: 768px) {
-            .carousel-item img {
-                max-width: 100%;
-            }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 10px;
+}
 
-            .carousel-item h2 {
-                font-size: 1.5rem;
-            }
-        }
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--secondary-color);
+    color: #fff;
+    margin-top: 2rem;
+    box-shadow: 0 -4px 6px var(--shadow-color);
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-item img {
+        max-height: 200px;
+    }
+
+    .carousel-item h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-item ul li {
+        font-size: 0.8rem;
+    }
+}
+
     </style>
 </head>
 <body>
