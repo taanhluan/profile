@@ -129,7 +129,7 @@ nav a:hover {
 }
 
 .post:hover h2, .post:hover h4 {
-    color: var(--accent-color);
+    color: var (--accent-color);
 }
 
 /* Button */
