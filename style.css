@@ -85,6 +85,9 @@ nav a:hover {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     transition: all var(--transition-duration);
 }
 
@@ -94,10 +97,16 @@ nav a:hover {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 4px 6px var(--shadow-color);
-    transition: transform var(--transition-duration), box-shadow var(--transition-duration);
+    transition: transform var(--transition-duration), box-shadow var (--transition-duration);
     margin-bottom: 2rem;
     overflow: hidden;
     position: relative;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .post:hover {
@@ -189,9 +198,19 @@ footer a:hover {
     .row {
         flex-direction: column;
     }
+
+    .course-header {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
 }
 
 /* Add smooth transitions */
 html {
     scroll-behavior: smooth;
+}
+
+/* Accessibility Enhancements */
+:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
